@@ -1,6 +1,5 @@
 package com.example.tictactoe
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -8,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.tictactoe.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private var volgendeBeurt = Logica.beurt.eenX
+    private var volgendeBeurt = Logica.beurt.eenX // Houdt bij wie aan de beurt is.
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var logica: Logica
@@ -26,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         logica = Logica()
     }
 
-    fun resetButtons(view: View)
+    fun resetButtons(view: View) // Reset alle knoppen.
     {
         binding.btn1.text = ""
         binding.btn2.text = ""
@@ -43,17 +42,17 @@ class MainActivity : AppCompatActivity() {
     }
     fun btnClick(view: View)
     {
-        if (view !is Button || gameOver)
+        if (view !is Button || gameOver) //Controleert of de view een button is en of de game nog niet over is.
             return
 
         voegToe(view)
     }
-    @SuppressLint("SetTextI18n")
-    fun voegToe(button: Button)
+
+    fun voegToe(button: Button) // Zorgt ervoor dat de speler zijn zet kan zetten.
     {
         if (button.text.isEmpty()) {
             logica.SetBeurt(volgendeBeurt, button.tag.toString())
-            if (logica.heeftSpelerGewonnen(volgendeBeurt)) {
+            if (logica.heeftSpelerGewonnen(volgendeBeurt)) {//Controleert of de speler heeft gewonnen.
                 if (volgendeBeurt == Logica.beurt.eenX) {
                     binding.gameStatus.text = "SpelerX heeft gewonnen!"
                     button.text = "X"

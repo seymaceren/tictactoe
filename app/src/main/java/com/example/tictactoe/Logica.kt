@@ -1,10 +1,10 @@
 package com.example.tictactoe
 
 class Logica {
-    public enum class beurt {
+    public enum class beurt {     // Enum om de beurt van de speler bij te houden
         eenO,
         eenX
-    }
+    } // Winnende combinaties voor speler X
     private var combinatiesX = mutableListOf(mutableListOf("1", "2", "3"),
         mutableListOf("4", "5", "6"),
         mutableListOf("7", "8", "9"),
@@ -13,7 +13,7 @@ class Logica {
         mutableListOf("3", "6", "9"),
         mutableListOf("1", "5", "9"),
         mutableListOf("3", "5", "7"))
-
+    // Winnende combinaties voor speler O
     private var combinatiesO = mutableListOf(mutableListOf("1", "2", "3"),
         mutableListOf("4", "5", "6"),
         mutableListOf("7", "8", "9"),
@@ -22,7 +22,7 @@ class Logica {
         mutableListOf("3", "6", "9"),
         mutableListOf("1", "5", "9"),
         mutableListOf("3", "5", "7"))
-
+   // Past de juiste combinaties aan voor de huidige speler na elke zet
     public fun SetBeurt(spelerBeurt: beurt, tag: String)
     {
         if (spelerBeurt == beurt.eenX)
@@ -53,11 +53,11 @@ class Logica {
                     teller++
                 }
             }
-            if (teller == 3)
+            if (teller == 3) // Als er 3 gelijke tekens in een winnende combinatie is, returnt hij true.
                 return true
         }
         return false
-    }
+    } // Functie om te controleren of de speler gewonnen heeft.
     public fun heeftSpelerGewonnen(spelerBeurt: beurt): Boolean
     {
         if (spelerBeurt == beurt.eenX)
