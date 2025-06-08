@@ -1,8 +1,8 @@
 ## Tic-Tac-Toe app
 
-* **Door: ** Şeyma Ceren Yildirim
-* **Datum: ** 8-6-2025
-* **Studentnummer: ** 1878084
+* **Door:** Şeyma Ceren Yildirim
+* **Datum:** 8-6-2025
+* **Studentnummer:** 1878084
 
 Mijn Tic-Tac-Toe applicatie heb ik gemaakt met Android Studio. Android Studio is een tool waarmee men applicaties kan maken voor de operating system 'Android'. 
 Bij Android Studio kun je kiezen voor de programmeertalen Java of Kotlin of beide, ik heb ervoor gekozen om mijn Tic-Tac-Toe applicatie te maken met de programmeertaal Kotlin. 
